@@ -93,7 +93,7 @@ int systools_win_create_process( const char *app, const char *args, const char *
 	char wdir[MAX_PATH];
 	DWORD wdir_ok;
 
-	sprintf(cmdline,"\"%s\" %s",app,args? args : "");
+	sprintf_s(cmdline,"\"%s\" %s",app,args? args : "");
 	wdir_ok = wd ? GetShortPathName(wd,&wdir,MAX_PATH) : 0;
 
 	memset(&si,0,sizeof(STARTUPINFO));
